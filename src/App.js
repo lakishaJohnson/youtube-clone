@@ -1,35 +1,23 @@
-import './App.css';
-import {Routes, Route, Redirect} from "react-router-dom"
-import React from 'react';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import React from "react";
+import NavBar from "./components/NavBar";
 /** COMPONENTS */
-import NavBar from './components/NavBar';
+import Home from "./components/Home";
+import About from "./components/About";
 
-class App extends React.Component{
-
+class App extends React.Component {
   render() {
-
     return (
-      
       <div className="App">
         <NavBar />
-          {/* <Routes>
-          
-          <Route exact path="/" component={ <NavBar /> } />
-          <Route path="/about" component={ <About /> } />
-          <Route path="/home" component={ <Home /> } /> 
-        </Routes> */}
-        
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </div>
     );
-
   }
 }
 
 export default App;
-      
-      
-        
-        
-
-        
-        

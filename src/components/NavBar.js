@@ -9,13 +9,11 @@ const NavBar = () => {
       </h1>
 
       <span>
-        <Link to="/home">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/about">About</Link>
       </span>
-      
     </header>
   );
 };
-
 
 export default NavBar;
