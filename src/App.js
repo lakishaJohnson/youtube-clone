@@ -9,13 +9,15 @@ class App extends React.Component{
   render() {
 
     return (
+      
       <div className="App">
-        {/* <NavBar /> */}
-          <Routes>
+        <NavBar />
+          {/* <Routes>
+          
           <Route exact path="/" component={ <NavBar /> } />
-          <Route path="/about" component={ <NavBar/> } />
-          <Route path="/home" component={ <NavBar /> } /> 
-        </Routes>
+          <Route path="/about" component={ <About /> } />
+          <Route path="/home" component={ <Home /> } /> 
+        </Routes> */}
         
       </div>
     );
