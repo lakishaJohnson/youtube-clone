@@ -1,10 +1,12 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import React from "react";
-import NavBar from "./components/NavBar";
+
 /** COMPONENTS */
+import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import About from "./components/About";
+console.log(process.env.REACT_APP_API_KEY)
 
 class App extends React.Component {
   render() {
