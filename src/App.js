@@ -1,13 +1,21 @@
 import "./App.css";
-import Comments from "./components/comments";
-//import { Routes, Route, Redirect } from "react-router-dom";
-import { Component } from "react";
 
-class App extends Component {
+import { Routes, Route } from "react-router-dom";
+import React from "react";
+import NavBar from "./components/NavBar";
+/** COMPONENTS */
+import Home from "./components/Home";
+import About from "./components/About";
+
+class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Comments />
+        <NavBar />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </div>
     );
   }
