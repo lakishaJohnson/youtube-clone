@@ -1,11 +1,11 @@
 import "./App.css";
-
 import { Routes, Route } from "react-router-dom";
 import React from "react";
 import NavBar from "./components/NavBar";
 /** COMPONENTS */
 import Home from "./components/Home";
 import About from "./components/About";
+import Comments from "./components/comments";
 
 class App extends React.Component {
   render() {
@@ -16,6 +16,7 @@ class App extends React.Component {
           <Route exact path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
         </Routes>
+        <Comments />
       </div>
     );
   }

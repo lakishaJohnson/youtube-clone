@@ -10,17 +10,24 @@ class Comments extends Component {
     };
   }
 
-  submitComment = (event) => {
-    event.preventDefault();
+  // Push this into previousComments and display it
+  // instead of jsx submit comment through setting state
+  submitComment = () => {
     this.setState({
-      comment: [...this.state.comment, this.state.name],
+      previousComments: [],
     });
+    // return (
+    //   <div>
+    //     <h2>{this.state.name}</h2>
+    //     <p>{this.state.comment}</p>
+    //   </div>
+    // );
   };
 
   handleInput = (event) => {
     this.setState({
       name: event.target.value,
-      comments: event.target.value,
+      comment: event.target.value,
     });
   };
 
@@ -38,12 +45,22 @@ class Comments extends Component {
 
     return (
       <div>
-        {console.log("this is this state name   " + this.state.name)}
-        {console.log(this.handleInput)}
+        {console.log("this.state.name --> " + this.state.name)}
+        {console.log("this.state.comment --> " + this.state.comment)}
         <label htmlFor="name">Name</label>
-        <input type="text" id="name" onChange={this.handleInput}></input>
+        <input
+          type="text"
+          id="name"
+          onChange={this.handleInput}
+          placeholder=" Name..."
+        ></input>
         <label htmlFor="comment">Comment</label>
-        <input type="text" id="comment" onChange={this.handleInput}></input>
+        <input
+          type="text"
+          id="comment"
+          onChange={this.handleInput}
+          placeholder=" ..."
+        ></input>
         <button onClick={this.submitComment}>Submit</button>
         {displayComment}
       </div>
