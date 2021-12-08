@@ -4,14 +4,12 @@ import React from "react";
 const NavBar = () => {
   return (
     <header className="NavBar">
-      <h1>
-        <Link to="/">Youtube</Link>
-      </h1>
+        <h2>Youtube</h2>
 
-      <span>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-      </span>
+      <ul>
+        <li><Link to="/">Home</Link> </li>
+       <li> <Link to="/about">About</Link></li>
+      </ul>
     </header>
   );
 };
