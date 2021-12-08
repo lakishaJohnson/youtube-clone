@@ -4,65 +4,70 @@ class Comments extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      comment: "",
+      input: {
+        name: "",
+        comment: "",
+      },
       previousComments: [],
     };
   }
 
-  // Push this into previousComments and display it
-  // instead of jsx submit comment through setting state
-  submitComment = () => {
+  submitComment = (event) => {
+    event.preventDefault();
+    const { previousComments, input } = this.state;
     this.setState({
-      previousComments: [],
+      previousComments: [...previousComments, input],
+      input: {
+        name: "",
+        comment: "",
+      },
     });
-    // return (
-    //   <div>
-    //     <h2>{this.state.name}</h2>
-    //     <p>{this.state.comment}</p>
-    //   </div>
-    // );
   };
 
   handleInput = (event) => {
+    const { input } = this.state;
     this.setState({
-      name: event.target.value,
-      comment: event.target.value,
+      input: { ...input, [event.target.name]: event.target.value },
     });
   };
 
   render() {
-    const displayComment = () => {
-      this.state.comment.map((word) => {
-        return (
-          <div>
-            <h2>{this.handleInput}</h2>
-            <p>{this.state.comment}</p>
-          </div>
-        );
-      });
-    };
+    const { previousComments, input } = this.state;
 
     return (
       <div>
-        {console.log("this.state.name --> " + this.state.name)}
-        {console.log("this.state.comment --> " + this.state.comment)}
-        <label htmlFor="name">Name</label>
+        {console.log("this.state.name --> " + this.state.input.name)}
+        {console.log("this.state.comment --> " + this.state.input.comment)}
+        {console.log(this.state.previousComments)}
+        <label>Name</label>
         <input
           type="text"
-          id="name"
+          name="name"
           onChange={this.handleInput}
           placeholder=" Name..."
+          value={input.name}
         ></input>
-        <label htmlFor="comment">Comment</label>
-        <input
+        <label>Comment</label>
+        <textarea
           type="text"
-          id="comment"
+          name="comment"
           onChange={this.handleInput}
           placeholder=" ..."
-        ></input>
+          value={input.comment}
+        ></textarea>
         <button onClick={this.submitComment}>Submit</button>
-        {displayComment}
+        <ul>
+          {previousComments.map((eachComment, index) => {
+            return (
+              <li key={index}>
+                <ul className="video-comment">
+                  <b>{eachComment.name}</b>
+                  <p>{eachComment.comment}</p>
+                </ul>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     );
   }
