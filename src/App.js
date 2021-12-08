@@ -7,7 +7,7 @@ import YouTube from "react-youtube";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import About from "./components/About";
-// console.log(process.env.REACT_APP_KEY)
+import Comments from "./components/comments";
 
 class App extends React.Component {
   constructor(props){
@@ -40,8 +40,12 @@ class App extends React.Component {
           <Route exact path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
         </Routes>
+<<<<<<< HEAD
+        <Comments />
+=======
 
         
+>>>>>>> b0ce38e1a986b6054786a710c642da797e273ed2
       </div>
     );
   }
