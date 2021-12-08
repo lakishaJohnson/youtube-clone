@@ -4,7 +4,7 @@ import YouTube from "react-youtube";
 class VideoCard extends React.Component {
     
     render() {
-        const {title} = this.props.vid.snippet
+        const {title, thumbnails} = this.props.vid.snippet
 
         const opts = {
             height: '390',
@@ -14,8 +14,9 @@ class VideoCard extends React.Component {
 
     return (
         <div>
-            <YouTube opt={opts}/>
+            {/* <YouTube opt={opts}/> */}
             <p>{title}</p>
+            <img src={thumbnails.default.url} />
         </div>
     )
 }
