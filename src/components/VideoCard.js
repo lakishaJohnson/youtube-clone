@@ -3,13 +3,16 @@ import React from "react";
 class VideoCard extends React.Component {
     
     render() {
+
         const {title, thumbnails} = this.props.vid.snippet
+
 
 
     return (
         <div>
             
-            <img src={thumbnails.default.url} alt="video thumbnail"/>
+            <img src={thumbnails.default.url} alt="video thumbnails"/>
+
             <p>{title}</p>
             
         </div>

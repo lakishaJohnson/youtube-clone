@@ -8,7 +8,7 @@ class Home extends React.Component {
 
     this.state = {
       userInput: "",
-      results: [],
+      results: "",
       videos: []
     }
   }
@@ -27,7 +27,6 @@ class Home extends React.Component {
     this.fetchVideos()
   }
   
-
   fetchVideos() {
     // console.log("Success")
     if(this.state.userInput === 0) return;
@@ -39,11 +38,10 @@ class Home extends React.Component {
       //  console.log(data)
       this.setState({
         videos: data.items,
-        userInput: ""
+        userInput: "",
       })
     })
   }
-      
     static getDerivedStateFromProps(props, state) {
     return {
       results: props.clear ? [] : state.results,

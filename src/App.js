@@ -30,8 +30,6 @@ class App extends React.Component {
   };
 
   render() {
-    // const { videos } = this.state
-
     return (
       <div className="App">
         <NavBar onClear={this.clearState} />
