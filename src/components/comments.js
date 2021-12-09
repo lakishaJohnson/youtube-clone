@@ -36,25 +36,23 @@ class Comments extends Component {
 
     return (
       <div>
-        {console.log("this.state.name --> " + this.state.input.name)}
-        {console.log("this.state.comment --> " + this.state.input.comment)}
-        {console.log(this.state.previousComments)}
+    
         <label>Name</label>
         <input
           type="text"
           name="name"
           onChange={this.handleInput}
           placeholder=" Name..."
-          value={input.name}
-        ></input>
+          value={input.name}>
+        </input>
         <label>Comment</label>
         <textarea
           type="text"
           name="comment"
           onChange={this.handleInput}
           placeholder=" ..."
-          value={input.comment}
-        ></textarea>
+          value={input.comment}>
+        </textarea>
         <button onClick={this.submitComment}>Submit</button>
         <ul>
           {previousComments.map((eachComment, index) => {
