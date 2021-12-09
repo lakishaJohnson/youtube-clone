@@ -7,7 +7,6 @@ import YouTube from "react-youtube";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import About from "./components/About";
-import Comments from "./components/comments";
 
 class App extends React.Component {
   constructor(props) {
