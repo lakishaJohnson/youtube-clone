@@ -22,7 +22,7 @@ class Home extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.setState({
-      results: this.state.userInput 
+      results: this.state.userInput,
     })
     this.fetchVideos()
   }
@@ -30,21 +30,24 @@ class Home extends React.Component {
   fetchVideos() {
     // console.log("Success")
     if(this.state.userInput === 0) return;
+    this.props.disableClear()
 
-    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${this.state.userInput}&type=video&key=${process.env.REACT_APP_KEY}`)
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=${this.state.userInput}&type=video&key=${process.env.REACT_APP_KEY}`)
     .then(res => res.json())
     .then((data) => {
-       console.log(data)
+      //  console.log(data)
       this.setState({
         videos: data.items,
         userInput: "",
       })
     })
   }
-  //   componentDidMount = () => {
-  //   this.fetchVideos()
-  // }
-    
+    static getDerivedStateFromProps(props, state) {
+    return {
+      results: props.clear ? [] : state.results,
+      videos: props.clear ? [] : state.videos,
+    };
+  }
 
   render() {
     const videosToDisplay = this.state.videos.map((video, i) => {
@@ -56,16 +59,18 @@ class Home extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <input 
         type="text" 
-        placeholder="search..." 
+        placeholder="Search..." 
         id="search" 
         value={this.state.userInput}
         onChange={this.handleUserInput} />
-        <button type="submit">Search</button>
-        <p>{this.state.results}</p>
+        <button 
+        type="submit">Search</button>
         </form>
         {videosToDisplay}
       </div>
     );
   }
 }
+        
+        
 export default Home;

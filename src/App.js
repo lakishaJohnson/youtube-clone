@@ -7,32 +7,39 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import About from "./components/About";
 
-// console.log(process.env.REACT_APP_KEY)
-
 class App extends React.Component {
-  // constructor(props){
-  //   super(props)
+  constructor(props) {
+    super(props);
 
-  //   this.state = {
-  //     videos: [],
-  //   }
-  // }
-  
-  
+    this.state = {
+      youtubeAPI: [],
+      clear: false
+    };
+  }
 
+  clearState = () => {
+    this.setState({
+      clear: true,
+    })
+  }
+
+  disableClear = () => {
+    this.setState({
+      clear: false,
+    })
+  }
 
   render() {
 
     return (
       <div className="App">
-        <NavBar />
+        <NavBar onClear={this.clearState}/>
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          {/* <Route path="/" element={<Home />} /> */}
+
+          <Route exact path="/" element={<Home clear={this.state.clear} disableClear={this.disableClear} />} />
+
           <Route path="/about" element={<About />} />
         </Routes>
-
-        
       </div>
     );
   }
