@@ -40,12 +40,6 @@ class App extends React.Component {
           <Route exact path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
         </Routes>
-<<<<<<< HEAD
-        <Comments />
-=======
-
-        
->>>>>>> b0ce38e1a986b6054786a710c642da797e273ed2
       </div>
     );
   }
