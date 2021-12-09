@@ -13,30 +13,34 @@ class App extends React.Component {
 
     this.state = {
       youtubeAPI: [],
-      clear: false
+      clear: false,
     };
   }
 
   clearState = () => {
     this.setState({
       clear: true,
-    })
-  }
+    });
+  };
 
   disableClear = () => {
     this.setState({
       clear: false,
-    })
-  }
+    });
+  };
 
   render() {
-
     return (
       <div className="App">
-        <NavBar onClear={this.clearState}/>
+        <NavBar onClear={this.clearState} />
         <Routes>
-
-          <Route exact path="/" element={<Home clear={this.state.clear} disableClear={this.disableClear} />} />
+          <Route
+            exact
+            path="/"
+            element={
+              <Home clear={this.state.clear} disableClear={this.disableClear} />
+            }
+          />
 
           <Route path="/about" element={<About />} />
         </Routes>
