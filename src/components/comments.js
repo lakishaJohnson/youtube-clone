@@ -35,7 +35,7 @@ class Comments extends Component {
     const { previousComments, input } = this.state;
 
     return (
-      <div>
+      <div className="comments">
         {console.log("this.state.name --> " + this.state.input.name)}
         {console.log("this.state.comment --> " + this.state.input.comment)}
         {console.log(this.state.previousComments)}
