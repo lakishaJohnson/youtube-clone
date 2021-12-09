@@ -4,7 +4,7 @@ class VideoCard extends React.Component {
     
     render() {
         const {title, thumbnails} = this.props.vid.snippet
-        
+
 
     return (
         <div>
