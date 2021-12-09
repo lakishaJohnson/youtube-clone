@@ -41,7 +41,6 @@ class App extends React.Component {
               <Home clear={this.state.clear} disableClear={this.disableClear} />
             }
           />
-
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
