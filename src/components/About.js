@@ -17,13 +17,14 @@ class About extends React.Component {
         <p>Get To Know The Dream Team!</p>
         <a href="https://github.com/imolina212">Isidro Molina</a>
         <p>
-          Constantly challenging himself and learning code, while dyill
-          improving his h
+          Constantly challenging himself Isidro is passionate about his health,
+          going on hikes in his time away from learning new coding languages. He
+          can also be spotted
         </p>
         <a href="https://github.com/https://github.com/lakishaJohnson">
           Kisha J
         </a>
-        <p></p>
+        <p>A cat mom with a </p>
         <a href="https://github.com/JustDDiaz">Justin Daniel Diaz </a>
         <a href="https://github.com/https://github.com/lakishaJohnson">
           Tashawnee G
