@@ -6,11 +6,6 @@ class VideoCard extends React.Component {
     render() {
         const {title, thumbnails} = this.props.vid.snippet
 
-        const opts = {
-            height: '390',
-            width: '640',
-
-    }
 
     return (
         <div>

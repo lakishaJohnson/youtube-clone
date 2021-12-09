@@ -30,16 +30,15 @@ class Home extends React.Component {
   fetchVideos() {
     if (this.state.userInput === 0) return;
 
-    fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=${this.state.userInput}&type=video&key=${process.env.REACT_APP_API_KEY}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        this.setState({
-          videos: data.items,
-        });
-      });
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${this.state.userInput}&type=video&key=${process.env.REACT_APP_API_KEY}`)
+    .then(res => res.json())
+    .then((data) => {
+       console.log(data)
+      this.setState({
+        videos: data.items,
+        userInput: ""
+      })
+    })
   }
 
   render() {

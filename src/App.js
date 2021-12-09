@@ -6,6 +6,10 @@ import React from "react";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import About from "./components/About";
+<<<<<<< HEAD
+=======
+import Comments from "./components/comments";
+>>>>>>> 8c89ca16710eae2ea6096196526ad05e83b35416
 
 class App extends React.Component {
   constructor(props){
@@ -35,8 +39,6 @@ class App extends React.Component {
           <Route exact path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
         </Routes>
-
-        
       </div>
     );
   }
