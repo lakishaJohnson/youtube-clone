@@ -17,18 +17,6 @@ class App extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   // let userInput = this.state.userInput
-  //   fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${this.props.userInput}&type=video&key=${process.env.REACT_APP_KEY}`)
-  //   .then(res => res.json())
-  //   .then((data) => {
-  //     // console.log(data)
-  //     this.setState({
-  //       youtubeAPI: data.snippet
-  //     })
-  //   })
-  // }
-
   clearState = () => {
     this.setState({
       clear: true,
@@ -42,8 +30,6 @@ class App extends React.Component {
   };
 
   render() {
-    // const { videos } = this.state
-
     return (
       <div className="App">
         <NavBar onClear={this.clearState} />
@@ -55,6 +41,7 @@ class App extends React.Component {
               <Home clear={this.state.clear} disableClear={this.disableClear} />
             }
           />
+
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
