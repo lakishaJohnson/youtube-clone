@@ -1,10 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import React from "react";
-<<<<<<< HEAD
-//import YouTube from "react-youtube";
-=======
->>>>>>> 164ef7e73d53d62f664010ec460d8858b523ed15
 
 /** COMPONENTS */
 import NavBar from "./components/NavBar";
