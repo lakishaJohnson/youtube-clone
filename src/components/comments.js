@@ -26,18 +26,39 @@ class App extends PureComponent {
     });
 
     return (
-      <div className="commentSection">
-        <div className="header">{count} Comments</div>
 
-        <CommentSection
-          currentUser={
-            userId && { userId: userId, avatarUrl: avatarUrl, name: name }
-          }
-          commentsArray={this.state.comment}
-          setComment={this.handleState}
-          signinUrl={signinUrl}
-          signupUrl={signupUrl}
-        />
+      <div>
+    
+        <label>Name</label>
+        <input
+          type="text"
+          name="name"
+          onChange={this.handleInput}
+          placeholder=" Name..."
+          value={input.name}>
+        </input>
+        <label>Comment</label>
+        <textarea
+          type="text"
+          name="comment"
+          onChange={this.handleInput}
+          placeholder=" ..."
+          value={input.comment}>
+        </textarea>
+        <button onClick={this.submitComment}>Submit</button>
+        <ul>
+          {previousComments.map((eachComment, index) => {
+            return (
+              <li key={index}>
+                <ul className="video-comment">
+                  <b>{eachComment.name}</b>
+                  <p>{eachComment.comment}</p>
+                </ul>
+              </li>
+            );
+          })}
+        </ul>
+
       </div>
     );
   }
