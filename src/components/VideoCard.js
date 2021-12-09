@@ -1,22 +1,17 @@
 import React from "react";
-import YouTube from "react-youtube";
 
 class VideoCard extends React.Component {
     
     render() {
         const {title, thumbnails} = this.props.vid.snippet
-
-        const opts = {
-            height: '390',
-            width: '640',
-
-    }
+        
 
     return (
         <div>
-            {/* <YouTube opt={opts}/> */}
+            
+            <img src={thumbnails.default.url} alt="video thumbnail"/>
             <p>{title}</p>
-            <img src={thumbnails.default.url} />
+            
         </div>
     )
 }
