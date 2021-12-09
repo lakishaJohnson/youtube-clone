@@ -6,37 +6,43 @@ import React from "react";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import About from "./components/About";
-<<<<<<< HEAD
-=======
 import Comments from "./components/comments";
->>>>>>> 8c89ca16710eae2ea6096196526ad05e83b35416
 
 class App extends React.Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
 
     this.state = {
       youtubeAPI: [],
-    }
+      clear: false,
+    };
   }
-  
-  componentDidMount() {
-    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${this.props.userInput}&type=video&key=${process.env.REACT_APP_API_KEY}`)
-    .then(res => res.json())
-    .then((data) => {
-      // console.log(data)
-      this.setState({
-        youtubeAPI: data.snippet
-      })
-    })
-  }
+
+  clearState = () => {
+    this.setState({
+      clear: true,
+    });
+  };
+
+  disableClear = () => {
+    this.setState({
+      clear: false,
+    });
+  };
 
   render() {
     return (
       <div className="App">
-        <NavBar />
+        <NavBar onClear={this.clearState} />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route
+            exact
+            path="/"
+            element={
+              <Home clear={this.state.clear} disableClear={this.disableClear} />
+            }
+          />
+
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
