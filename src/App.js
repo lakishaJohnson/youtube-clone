@@ -13,24 +13,7 @@ class App extends React.Component {
 
     this.state = {
       youtubeAPI: [],
-<<<<<<< HEAD
-    };
-  }
-
-  componentDidMount() {
-    // let userInput = this.state.userInput
-    fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${this.props.userInput}&type=video&key=${process.env.REACT_APP_KEY}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data)
-        this.setState({
-          youtubeAPI: data.snippet,
-        });
-      });
-=======
-      clear: false
+      clear: false,
     };
   }
 
@@ -49,24 +32,29 @@ class App extends React.Component {
   clearState = () => {
     this.setState({
       clear: true,
-    })
-  }
+    });
+  };
 
   disableClear = () => {
     this.setState({
       clear: false,
-    })
->>>>>>> c3df041f51499fd4da4028ed2ee132a688fabd1d
-  }
+    });
+  };
 
   render() {
     // const { videos } = this.state
 
     return (
       <div className="App">
-        <NavBar onClear={this.clearState}/>
+        <NavBar onClear={this.clearState} />
         <Routes>
-          <Route exact path="/" element={<Home clear={this.state.clear} disableClear={this.disableClear} />} />
+          <Route
+            exact
+            path="/"
+            element={
+              <Home clear={this.state.clear} disableClear={this.disableClear} />
+            }
+          />
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
