@@ -1,5 +1,4 @@
 import React from "react";
-import YouTube from "react-youtube";
 
 class VideoCard extends React.Component {
     
@@ -9,9 +8,10 @@ class VideoCard extends React.Component {
 
     return (
         <div>
-            {/* <YouTube opt={opts}/> */}
+            
+            <img src={thumbnails.default.url} alt="video thumbnail"/>
             <p>{title}</p>
-            <img src={thumbnails.default.url} />
+            
         </div>
     )
 }
