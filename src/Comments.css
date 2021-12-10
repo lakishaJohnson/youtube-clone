@@ -33,3 +33,9 @@
   background-color: blue; /* Green */
   color: white;
 }
+
+.commentList {
+  text-align: left;
+  padding-left: 7cm;
+  padding-right: 7cm;
+}
