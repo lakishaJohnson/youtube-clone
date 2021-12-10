@@ -1,4 +1,5 @@
 import { Component } from "react";
+import "./Comments.css";
 
 class Comments extends Component {
   constructor(props) {
@@ -36,26 +37,29 @@ class Comments extends Component {
 
     return (
       <div className="comments">
-        {console.log("this.state.name --> " + this.state.input.name)}
-        {console.log("this.state.comment --> " + this.state.input.comment)}
-        {console.log(this.state.previousComments)}
-        <label>Name</label>
-        <input
-          type="text"
-          name="name"
-          onChange={this.handleInput}
-          placeholder=" Name..."
-          value={input.name}
-        ></input>
-        <label>Comment</label>
-        <textarea
-          type="text"
-          name="comment"
-          onChange={this.handleInput}
-          placeholder=" ..."
-          value={input.comment}
-        ></textarea>
-        <button onClick={this.submitComment}>Submit</button>
+        <div className="nameSection">
+          <label className="nameLabel">Name</label>
+          <input
+            type="text"
+            name="name"
+            onChange={this.handleInput}
+            placeholder=" Name..."
+            value={input.name}
+          ></input>
+        </div>
+        <div className="commentSection">
+          <label className="commentsLabel">Comment</label>
+          <textarea
+            type="text"
+            name="comment"
+            onChange={this.handleInput}
+            placeholder=" ..."
+            value={input.comment}
+          ></textarea>
+        </div>
+        <button onClick={this.submitComment} className="submitButton">
+          Submit
+        </button>
         <ul>
           {previousComments.map((eachComment, index) => {
             return (
