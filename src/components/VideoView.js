@@ -1,32 +1,21 @@
 import React from "react";
 import YouTube from "react-youtube";
+import { useParams } from "react-router-dom";
+// import Comments from "./Comments";
 
-class VideoLink extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        const {videoId} = this.props.vid.id
-        const {title} = this.props.vid.snippet
-        
-
+const VideoView = () => {
+      console.log(useParams())
         const opts = {
             height: '390',
             width: '640',
         }
-
+        let vidParam = useParams()
     return (
         <div>
-            <YouTube videoId={videoId} opts={opts}/>
-            <p>{title}</p>
-            
-            <Comments />
+            <YouTube videoId={vidParam.id} opts={opts}/>
         </div>
     )
 }
 
-}
 
-
-export default VideoLink; 
+export default VideoView; 

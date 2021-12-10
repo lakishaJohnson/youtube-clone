@@ -3,8 +3,8 @@ import VideoCard from "./VideoCard";
 
 
 class Home extends React.Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
 
     this.state = {
       userInput: "",
@@ -16,23 +16,21 @@ class Home extends React.Component {
   handleUserInput = (event) => {
     this.setState({
       userInput: event.target.value,
-    })
-  }
+    });
+  };
 
   handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     this.setState({
       results: this.state.userInput,
-    })
-    this.fetchVideos()
-  }
-  
-  fetchVideos() {
-    // console.log("Success")
-    if(this.state.userInput === 0) return;
-    this.props.disableClear()
+    });
+    this.fetchVideos();
+  };
 
-    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=${this.state.userInput}&type=video&key=${process.env.REACT_APP_KEY}`)
+  fetchVideos() {
+    if (this.state.userInput === 0) return;
+
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${this.state.userInput}&type=video&key=${process.env.REACT_APP_API_KEY}`)
     .then(res => res.json())
     .then((data) => {
       //  console.log(data)
@@ -51,20 +49,21 @@ class Home extends React.Component {
 
   render() {
     const videosToDisplay = this.state.videos.map((video, i) => {
-      return (<VideoCard vid={video} key={i} />);
+      return <VideoCard vid={video} key={i} />;
     });
-    
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input 
-        type="text" 
-        placeholder="Search..." 
-        id="search" 
-        value={this.state.userInput}
-        onChange={this.handleUserInput} />
-        <button 
-        type="submit">Search</button>
+          <input
+            type="text"
+            placeholder="Search..."
+            id="search"
+            value={this.state.userInput}
+            onChange={this.handleUserInput}
+          />
+          <button type="submit">Search</button>
+          <p>{this.state.results}</p>
         </form>
         {videosToDisplay}
       </div>
