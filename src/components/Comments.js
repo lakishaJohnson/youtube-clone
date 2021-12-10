@@ -60,7 +60,7 @@ class Comments extends Component {
         <button onClick={this.submitComment} className="submitButton">
           Submit
         </button>
-        <ul>
+        <ul className="commentList">
           {previousComments.map((eachComment, index) => {
             return (
               <li key={index}>
