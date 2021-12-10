@@ -27,21 +27,17 @@ class Home extends React.Component {
   };
 
   fetchVideos() {
-    // console.log("Success")
     if (this.state.userInput === 0) return;
-    this.props.disableClear();
 
-    fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=${this.state.userInput}&type=video&key=${process.env.REACT_APP_KEY}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        //  console.log(data)
-        this.setState({
-          videos: data.items,
-          userInput: "",
-        });
-      });
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${this.state.userInput}&type=video&key=${process.env.REACT_APP_API_KEY}`)
+    .then(res => res.json())
+    .then((data) => {
+      //  console.log(data)
+      this.setState({
+        videos: data.items,
+        userInput: "",
+      })
+    })
   }
   static getDerivedStateFromProps(props, state) {
     return {
@@ -66,6 +62,10 @@ class Home extends React.Component {
             onChange={this.handleUserInput}
           />
           <button type="submit">Search</button>
+<<<<<<< HEAD
+=======
+          <p>{this.state.results}</p>
+>>>>>>> main
         </form>
         {videosToDisplay}
       </div>
