@@ -1,0 +1,35 @@
+.nameSection {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  padding-left: 7cm;
+  padding-right: 7cm;
+}
+
+.commentSection {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  padding-left: 7cm;
+  padding-right: 7cm;
+}
+
+.nameLabel {
+  text-align: left;
+}
+
+.commentsLabel {
+  text-align: left;
+}
+
+.submitButton {
+  margin-left: -760px;
+  background-color: rgb(57, 124, 255);
+  color: white;
+  border: blue;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+.submitButton:hover {
+  background-color: blue; /* Green */
+  color: white;
+}
