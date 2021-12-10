@@ -1,5 +1,5 @@
 import { Component } from "react";
-import "./Comments.css";
+import "../Comments.css";
 
 class Comments extends Component {
   constructor(props) {
