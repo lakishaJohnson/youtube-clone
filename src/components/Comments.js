@@ -53,7 +53,7 @@ class Comments extends Component {
             type="text"
             name="comment"
             onChange={this.handleInput}
-            placeholder=" ..."
+            placeholder=" ... "
             value={input.comment}
           ></textarea>
         </div>
