@@ -13,5 +13,25 @@ header {
 }
 
 ul li {
-list-style-type: none ;
+list-style-type: none;
+}
+
+
+
+ul {
+  padding-left: 500px;
+}
+
+.search {
+  background-color: lightgrey;
+  margin-left: 120px;
+  margin-right: 120px;
+}
+
+.search-bar {
+  margin: 30px;
+}
+
+.links {
+  padding-left: 50px;
 }
