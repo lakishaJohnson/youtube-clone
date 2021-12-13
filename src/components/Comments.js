@@ -1,4 +1,5 @@
 import { Component } from "react";
+import Share from "./Share";
 
 class Comments extends Component {
   constructor(props) {
@@ -36,9 +37,6 @@ class Comments extends Component {
 
     return (
       <div>
-        {console.log("this.state.name --> " + this.state.input.name)}
-        {console.log("this.state.comment --> " + this.state.input.comment)}
-        {console.log(this.state.previousComments)}
         <label>Name</label>
         <input
           type="text"
@@ -68,6 +66,7 @@ class Comments extends Component {
             );
           })}
         </ul>
+        <Share />
       </div>
     );
   }
